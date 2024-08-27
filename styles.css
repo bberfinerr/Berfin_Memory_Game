@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('wpp.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#restart-button{
+    background-color: #efeef6;
+    padding: 10px;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    border: 2px rgb(70, 127, 72);
+    text-shadow: 2px 2px 5px rgba(87, 214, 102, 0.7);
+}
+
+.score-board {
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #efeef6;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 5px rgba(87, 214, 102, 0.7);
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid rgb(70, 127, 72);
+}
+.memory-game{
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap; /*satırlara böler*/
+    perspective: 1000px;
+    margin-top: 20px;
+}
+
+.game-title{
+    font-size: 2.4rem;
+    color:rgb(50, 43, 43);
+    font-family:sans-serif;
+    text-shadow: 2px 2px 5px rgba(5, 44, 9, 0.7);
+    margin-bottom: 20 px;
+    text-align: center;
+    border: 2px solid rgb(70, 127, 72);
+    background-color: #efeef6;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+
+.memory-card{
+  width: calc(25% - 35px);
+  height: calc(25% - 15px);
+  margin: 10px;
+  border-radius: 30px;
+  border: 1px solid rgb(70, 127, 72);
+  position: relative; 
+  transform: scale(1); /*boyutu orjinal boyutta tutuyor*/
+  transform-style: preserve-3d; /*çocuk elemanların 3D dönüşümlerini korur?*/
+  transition: transform .3s; /*dönüşüm geçişleri*/
+  box-shadow: 5px 5px 5px rgba(215, 198, 87, 0.3);
+}        
+
+
+.flip {
+   transform: rotateY(180deg); 
+}
+/*flip tek yazılırsa çalışır mı? evet çalışır ancak bütün flip atanan sınıflarda çalışır. Yani memory card dışında bir nesneye atarsak*/
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+
+
